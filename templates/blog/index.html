@@ -21,17 +21,17 @@
           <span class="comments-link"><a href="{{ post.get_absolute_url }}#comment-area">{{ post.comment_set.count }} 评论</a></span>
           <span class="views-count"><a href="{{ post.get_absolute_url }}>"{{ post.views }} 阅读 </a></span>
         </div>
-    </header>
-    <div class="entry-content clearfix">
-      <p>{{ post.excerpt }}...</p>
-      <div class="read-more cl-effect-14">
-        <a href="{{ post.get_absolute_url }}" calss="more-link">继续阅读 <span class="meta-nav">→</span></a>
+      </header>
+      <div class="entry-content clearfix">
+        <p>{{ post.excerpt }}...</p>
+        <div class="read-more cl-effect-14">
+          <a href="{{ post.get_absolute_url }}" calss="more-link">继续阅读 <span class="meta-nav">→</span></a>
+        </div>
       </div>
-    </div>
-</article> 
-{% empty %}
-<div class="no-post">暂时还没有发布的文章 !</div>
-{% endfor %}
+    </article> 
+  {% empty %}
+    <div class="no-post">暂时还没有发布的文章 !</div>
+  {% endfor %}
 {% if is_paginated %}
 <div class="pagination">
   {% if first %}
@@ -59,19 +59,15 @@
   {% endif %}
 </div>
 <!-- <div class="pagination-simple"> -->
-<!--   <1!-- 如果当前页面还有上一页,显示一个上一页的按钮 --1> -->
-<!--   {% if page_obj.has_previous %} -->
-<!--     <a href="?page={{ page_obj.previous_page_number }}">上一页</a> -->
-<!--   {% endif %} -->
-<!--   <1!-- 显示当前页的信息 --1> -->
-<!--   <span class="current">第 {{ page_obj.number }} 页 / 共 {{ paginator.num_pages }} 页</span> -->
-<!--   <1!-- 如果当前页还有下一页,显示一个下一页按钮 --1> -->
-<!--   {% if page_obj.has_next %} -->
-<!--     <a href="?page={{ page_obj.next_page_number }}">下一页</a> -->
-<!--   {% endif %} -->
+  <!-- 如果当前页面还有上一页,显示一个上一页的按钮 -->
+  <!-- {% if page_obj.has_previous %} -->
+    <!-- <a href="?page={{ page_obj.previous_page_number }}">上一页</a> {% endif %} -->
+  <!-- <1!-- 显示当前页的信息 --1> -->
+  <!-- <span class="current">第 {{ page_obj.number }} 页 / 共 {{ paginator.num_pages }} 页</span> -->
+  <!-- <1!-- 如果当前页还有下一页,显示一个下一页按钮 --1> -->
+  <!-- {% if page_obj.has_next %} -->
+    <!-- <a href="?page={{ page_obj.next_page_number }}">下一页</a> -->
+  <!-- {% endif %} -->
 <!-- </div> -->
-{% endif %}
-<div class="rss">
-  <a href="{% url 'rss' %}"><span class="ion-social-rss-outline"></span>RSS 订阅</a>
-</div>
+  {% endif %}
 {% endblock main %}
